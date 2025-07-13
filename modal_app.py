@@ -245,9 +245,10 @@ async def audio_to_audio_endpoint(
 
 @app.local_entrypoint()
 def main(
-    prompt: str = "smooth jazz, 112 BPM",
-    duration: int = 8,
+    prompt: str = "smooth relaxing jazz",
+    duration: int = 30,
 ):
+    print(f"Generating audio for prompt: {prompt}")
     model = Model()
     audio_bytes = model.text_to_audio.remote(prompt, duration)
     
@@ -258,3 +259,6 @@ def main(
         output_path = output_dir / f"{prompt}.wav"
         print(f"Saving to {output_path}")
         output_path.write_bytes(audio_bytes) 
+
+    else:
+        print("Failed to generate audio")
