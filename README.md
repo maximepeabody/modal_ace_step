@@ -3,6 +3,8 @@ This is a simple implementation of the Ace-Step audio generation ML model using 
 
 The implementation makes use of model weight caching on a modal volume, as well as an attempt to use memory snapshotting.
 
+It's used by www.text-to-sample.com
+
 ## How to use
 1. Create an account on modal
 2. install modal 
